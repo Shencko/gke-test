@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: my-container
-          image: us-central1-docker.pkg.dev/gke-user/gke-repo/quickstart-image
+          image: us-central1-docker.pkg.dev/gke-user/gke-cicd/quickstart-image
           ports:
             - containerPort: 8080
 

@@ -4,7 +4,7 @@ steps:
       [
         "build",
         "-t",
-        "us-central1-docker.pkg.dev/gke-user/gke-repo/quickstart-image",
+        "us-central1-docker.pkg.dev/gke-user/gke-cicd/quickstart-image",
         "./app1",
       ]
     id: "Build Docker Image"
@@ -14,7 +14,7 @@ steps:
 
   - name: "gcr.io/cloud-builders/docker"
     args:
-      ["push", "us-central1-docker.pkg.dev/gke-user/gke-repo/quickstart-image"]
+      ["push", "us-central1-docker.pkg.dev/gke-user/gke-cicd/quickstart-image"]
     id: "Push Docker Image"
 
   - name: "gcr.io/cloud-builders/docker"
@@ -22,7 +22,7 @@ steps:
       [
         "build",
         "-t",
-        "us-central1-docker.pkg.dev/gke-user/gke-repo/flask-image",
+        "us-central1-docker.pkg.dev/gke-user/gke-cicd/flask-image",
         "./app2",
       ]
     id: "Build Docker Image2"
@@ -31,7 +31,7 @@ steps:
     # - 'us-central1-docker.pkg.dev/<your_project_id>/gke-repo/quickstart-image'
 
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "us-central1-docker.pkg.dev/gke-user/gke-repo/flask-image"]
+    args: ["push", "us-central1-docker.pkg.dev/gke-user/gke-cicd/flask-image"]
     id: "Push Docker Image2"
 
   - name: "google/cloud-sdk:latest"
